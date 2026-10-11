@@ -103,13 +103,16 @@ else
   stage="$PLUGINS_DIR/.app-picker.tmp.$$"
   trap 'rm -rf -- "$stage"' EXIT
   if git -C "$SCRIPT_DIR" rev-parse --git-dir >/dev/null 2>&1; then
-    # Stay on a branch (not a detached commit) so `git pull` and
-    # `omarchy plugin update` can fast-forward the install later.
+    # Install the exact commit being run, on a named branch that tracks the
+    # same branch on GitHub, so both `git pull` and `omarchy plugin update`
+    # can fast-forward the install later. A checkout of a release tag is
+    # detached; it is installed on `main`.
     branch=$(git -C "$SCRIPT_DIR" symbolic-ref --short -q HEAD || echo main)
-    git clone --quiet --branch "$branch" -- "$SCRIPT_DIR" "$stage" 2>/dev/null \
-      || git clone --quiet -- "$SCRIPT_DIR" "$stage"
-    git -C "$stage" reset --quiet --hard "$(git -C "$SCRIPT_DIR" rev-parse HEAD)"
+    git clone --quiet --no-checkout -- "$SCRIPT_DIR" "$stage"
+    git -C "$stage" checkout --quiet -B "$branch" "$(git -C "$SCRIPT_DIR" rev-parse HEAD)"
     git -C "$stage" remote set-url origin "$origin_url"
+    git -C "$stage" config "branch.$branch.remote" origin
+    git -C "$stage" config "branch.$branch.merge" "refs/heads/$branch"
   else
     # Unpacked from a zip/tarball: copy the files as they are.
     mkdir -p "$stage"
