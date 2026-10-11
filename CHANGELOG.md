@@ -4,6 +4,14 @@ All notable changes to Omarchy App Picker are recorded here. Versions follow
 [Semantic Versioning](https://semver.org). The version in `manifest.json`
 matches the git tag (`vX.Y.Z`).
 
+## Unreleased
+
+### Documentation
+- Test record: mouse drag-and-drop (add to Favorites, reorder, remove) and all
+  other functions tested by hand on 1.0.1 by Patrick Mulcahy, 2026-10-11, with
+  no issues found. This closes the 1.0.0 known limitation about untested
+  drag-and-drop.
+
 ## 1.0.1 (2026-10-11)
 
 Licensing and documentation release, with one installer fix. The picker

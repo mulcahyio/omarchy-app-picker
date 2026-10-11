@@ -80,7 +80,8 @@ On Omarchy 4.0.4, Hyprland 0.56.2, one 1920 × 1080 monitor:
 | `uninstall.sh`: disables, removes bar icon, keybinding block and folder | Pass | Pass |
 | ShellCheck (warnings) on both scripts | Pass | Pass |
 | `bindings.conf` (older Hyprland config) | Not tested | Not tested |
-| Mouse drag-and-drop | Not tested | Not tested |
+| Mouse: drag an app into Favorites, reorder by dragging, remove by dragging out / ✕ | Not tested | Pass (by hand, Patrick Mulcahy, 2026-10-11) |
+| All other functions, by hand | — | Pass (Patrick Mulcahy, 2026-10-11; no issues found) |
 | Multiple monitors, HiDPI scaling | Not tested | Not tested |
 
 ## Releasing

@@ -316,7 +316,7 @@ the shell.
 | D2 | Use Omarchy's own `AppLibrary` | The picker must show exactly what the Apps menu shows, with the same hidden-app rules, icons and launch behaviour | Imports `qs.services`, an internal Omarchy module (see risks) |
 | D3 | Create a private `AppLibrary` when the shell's facade is missing | On Omarchy 4.0.4 the app-library facade passed to third-party menu plugins is `null` | One extra icon-index scan in the shell; uses the facade automatically if a future Omarchy provides it |
 | D4 | `keepLoaded: true` | Instant open; app list and icon index stay warm | Code changes need `omarchy restart shell` to load |
-| D5 | Hand-built drag and drop | One path for tile → box, chip → chip and chip → out; full control of the insertion slot | More code than `DropArea`; tested by hand |
+| D5 | Hand-built drag and drop | One path for tile → box, chip → chip and chip → out; full control of the insertion slot | More code than `DropArea`; verified by hand, no automated test |
 | D6 | State in `~/.local/state`, not the plugin folder | The shell reloads a plugin when files in its folder change | State survives reinstall and uninstall (unless `--purge`) |
 | D7 | Install as a git checkout | Same layout as `omarchy plugin add`, so `omarchy plugin update` and `git pull` work | Needs `git`; zip installs can't self-update |
 | D8 | Marked keybinding block, never silent override | Users' existing bindings are respected; uninstall can remove exactly what was added | A taken key means no keybinding until the user picks one |
@@ -328,7 +328,7 @@ the shell.
 |---|---|---|
 | Internal Omarchy API | `qs.services.AppLibrary`, `qs.Commons`, `qs.Ui` and the plugin injection contract are Omarchy internals and may change in an Omarchy update | Compatibility is stated per release; check after Omarchy updates |
 | Hot reload | The shell keeps the loaded plugin; edits apply only after `omarchy restart shell` | Installer restarts the shell |
-| Drag and drop | Not covered by automated tests | Keyboard equivalents share the ranking code and are tested |
+| Drag and drop | No automated test (mouse drags can't be simulated on the test machine) | Tested by hand on 1.0.1 (add, reorder, remove); keyboard equivalents share the ranking code |
 | Multi-monitor / HiDPI | Not yet tested | Layout uses logical pixels and the focused monitor |
 | Favorites are per user | Stored in the user's state directory | Copy the state file to move favorites to another machine |
 | Security | Plugins run unsandboxed in the shell process | The plugin only reads desktop entries and writes its own state file; it launches apps the same way the Apps menu does |
