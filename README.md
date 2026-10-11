@@ -6,7 +6,7 @@ them, and keeps a ranked list of favorites you build by drag and drop.
 
 ![App Picker, full screen](docs/screenshot.png)
 
-**Version:** 1.0.0 · **Plugin id:** `mulcahyio.app-picker` · **License:** MIT · **Contact:** dev@mulcahy.io
+**Version:** 1.0.1 · **Plugin id:** `mulcahyio.app-picker` · **License:** MIT · **Contact:** dev@mulcahy.io
 
 ## Features
 
@@ -42,34 +42,16 @@ cd omarchy-app-picker
 ./install.sh
 ```
 
-The installer:
+The installer checks your system, installs the plugin in
+`~/.config/omarchy/plugins/mulcahyio.app-picker/`, puts its icon after the
+Omarchy icon, adds Super + A (without overriding a key you already use), and
+restarts the Omarchy shell. Running it again is safe.
 
-1. checks that Omarchy 4+ and its shell are running, and validates the plugin;
-2. installs the plugin as a git checkout in
-   `~/.config/omarchy/plugins/mulcahyio.app-picker/`;
-3. enables it and puts its icon right after the Omarchy icon in the bar;
-4. adds the keybinding to `~/.config/hypr/bindings.lua` in a marked block
-   (backing up the file first), reloads Hyprland and checks for config errors;
-5. restarts the Omarchy shell so the plugin loads.
-
-If the key is already taken, the installer leaves your binding alone and
-tells you. Options:
-
-| Option | What it does |
-|---|---|
-| `--key "SUPER + ALT + Y"` | Use a different keybinding (check which keys are free with `omarchy menu keybindings --print`) |
-| `--force-key` | Take the key even if it is bound (the old binding is unbound) |
-| `--no-keybinding` | No keybinding; use the bar icon |
-| `--no-restart` | Don't restart the shell now |
-| `--yes` | Replace an existing install without asking |
-
-Running `./install.sh` again is safe: it replaces the installed copy and the
-keybinding block instead of adding duplicates.
-
-**Without the installer:** `omarchy plugin add
-https://github.com/mulcahyio/omarchy-app-picker.git --enable` installs
-and enables the plugin but adds no keybinding. Run `omarchy restart shell`
-afterwards.
+The **[Install Guide](docs/INSTALL.md)** covers access to the private
+repository, installer options (`--key`, `--force-key`, `--no-keybinding`,
+`--no-restart`, `--yes`), installing a specific version, installing with
+`omarchy plugin add` or from a zip, checking the install, updating,
+uninstalling and troubleshooting.
 
 ## Using it
 
@@ -111,13 +93,12 @@ ids. An app that is uninstalled drops out of the list.
 ## Update
 
 ```bash
-cd ~/.config/omarchy/plugins/mulcahyio.app-picker && git pull
+omarchy plugin update mulcahyio.app-picker
 omarchy restart shell
 ```
 
-or `omarchy plugin update mulcahyio.app-picker` followed by
-`omarchy restart shell`. A shell restart is needed because the shell keeps the
-loaded plugin in memory.
+A shell restart is needed because the shell keeps the loaded plugin in memory.
+See the [Install Guide](docs/INSTALL.md#5-update).
 
 ## Uninstall
 
@@ -138,6 +119,8 @@ kept; add `--purge` to remove them too.
 | Changes to the plugin files don't show | Run `omarchy restart shell`. |
 | Some app is missing | The picker shows what the Omarchy Apps menu shows. Apps hidden there (NoDisplay, OnlyShowIn, Omarchy's hide list) are hidden here too. |
 
+More in the [Install Guide](docs/INSTALL.md#8-troubleshooting).
+
 ## Files
 
 | File | Purpose |
@@ -146,9 +129,12 @@ kept; add `--purge` to remove them too.
 | `AppPicker.qml` | The picker window |
 | `BarWidget.qml` | The bar icon |
 | `install.sh` / `uninstall.sh` | Installer and uninstaller |
-| `CHANGELOG.md` | Release history |
 | `LICENSE` | MIT License |
-| `docs/DEVELOPMENT.md` | How it works, testing and releasing |
+| `CHANGELOG.md` | Full release history |
+| `docs/INSTALL.md` | Install Guide |
+| `docs/ARCHITECTURE.md` | Architecture: components, Omarchy integration, data, flows, design decisions |
+| `docs/DEVELOPMENT.md` | Development guide: checks, testing, releasing |
+| `docs/screenshot.png` | Screenshot |
 
 ## Author and license
 
