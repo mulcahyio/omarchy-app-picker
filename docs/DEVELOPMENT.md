@@ -4,6 +4,8 @@
 |---|---|
 | **Version** | 1.0.0 |
 | **Plugin id** | `mulcahyio.app-picker` |
+| **Developed by** | Patrick Mulcahy · dev@mulcahy.io |
+| **License** | MIT (see `LICENSE`) |
 | **Built on** | Omarchy 4.0.4 shell plugin system (Quickshell 0.3.1, Qt 6, Hyprland 0.56.2) |
 
 ## How it fits into Omarchy

@@ -4,6 +4,12 @@ All notable changes to Omarchy App Picker are recorded here. Versions follow
 [Semantic Versioning](https://semver.org). The version in `manifest.json`
 matches the git tag (`vX.Y.Z`).
 
+## Unreleased
+
+### Added
+- MIT License (`LICENSE`), copyright Patrick Mulcahy <dev@mulcahy.io>.
+- Contact details in the README, development notes and plugin manifest.
+
 ## 1.0.0 (2026-10-11)
 
 First release.

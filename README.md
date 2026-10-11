@@ -6,7 +6,7 @@ them, and keeps a ranked list of favorites you build by drag and drop.
 
 ![App Picker, full screen](docs/screenshot.png)
 
-**Version:** 1.0.0 · **Plugin id:** `mulcahyio.app-picker` · **Status:** stable
+**Version:** 1.0.0 · **Plugin id:** `mulcahyio.app-picker` · **License:** MIT · **Contact:** dev@mulcahy.io
 
 ## Features
 
@@ -147,9 +147,13 @@ kept; add `--purge` to remove them too.
 | `BarWidget.qml` | The bar icon |
 | `install.sh` / `uninstall.sh` | Installer and uninstaller |
 | `CHANGELOG.md` | Release history |
+| `LICENSE` | MIT License |
 | `docs/DEVELOPMENT.md` | How it works, testing and releasing |
 
 ## Author and license
 
-Developed by Patrick Mulcahy. License: not yet chosen; until one is added, all
-rights are reserved.
+Developed by Patrick Mulcahy · dev@mulcahy.io
+
+Released under the [MIT License](LICENSE): you may use, copy, change and share
+it freely, as long as the copyright and license notice stay with it. It comes
+with no warranty.

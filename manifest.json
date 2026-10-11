@@ -3,7 +3,7 @@
   "id": "mulcahyio.app-picker",
   "name": "App Picker",
   "version": "1.0.0",
-  "author": "Patrick Mulcahy",
+  "author": "Patrick Mulcahy <dev@mulcahy.io>",
   "description": "Full-screen app grid with search, A-Z / Z-A sorting and ranked favorites",
   "kinds": [
     "menu",
