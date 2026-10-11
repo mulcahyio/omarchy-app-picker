@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Product** | Omarchy App Picker |
-| **Version** | 1.0.1 |
+| **Version** | 1.0.2 |
 | **Plugin id** | `mulcahyio.app-picker` |
 | **Developed by** | Patrick Mulcahy · dev@mulcahy.io |
 | **License** | MIT |
@@ -320,7 +320,7 @@ the shell.
 | D6 | State in `~/.local/state`, not the plugin folder | The shell reloads a plugin when files in its folder change | State survives reinstall and uninstall (unless `--purge`) |
 | D7 | Install as a git checkout | Same layout as `omarchy plugin add`, so `omarchy plugin update` and `git pull` work | Needs `git`; zip installs can't self-update |
 | D8 | Marked keybinding block, never silent override | Users' existing bindings are respected; uninstall can remove exactly what was added | A taken key means no keybinding until the user picks one |
-| D9 | Neutral plugin id `mulcahyio.app-picker` | Not tied to one user's login name | Installs from earlier personal builds must be removed first |
+| D9 | Plugin id `mulcahyio.app-picker` | Namespaced by the GitHub account that publishes it, as Omarchy plugin marketplace IDs are permanent and globally unique | Installs from earlier personal builds must be removed first |
 
 ## 11. Constraints, risks and limitations
 

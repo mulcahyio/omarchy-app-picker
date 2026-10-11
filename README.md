@@ -4,9 +4,9 @@ A full-screen app launcher for [Omarchy](https://omarchy.org). It shows every
 app from the Omarchy Apps menu as a grid of icons, lets you sort and search
 them, and keeps a ranked list of favorites you build by drag and drop.
 
-![App Picker, full screen](docs/screenshot.png)
+![App Picker, full screen](preview.png)
 
-**Version:** 1.0.1 · **Plugin id:** `mulcahyio.app-picker` · **License:** MIT · **Contact:** dev@mulcahy.io
+**Version:** 1.0.2 · **Plugin id:** `mulcahyio.app-picker` · **License:** MIT · **Contact:** dev@mulcahy.io
 
 ## Features
 
@@ -47,8 +47,7 @@ The installer checks your system, installs the plugin in
 Omarchy icon, adds Super + A (without overriding a key you already use), and
 restarts the Omarchy shell. Running it again is safe.
 
-The **[Install Guide](docs/INSTALL.md)** covers access to the private
-repository, installer options (`--key`, `--force-key`, `--no-keybinding`,
+The **[Install Guide](docs/INSTALL.md)** covers installer options (`--key`, `--force-key`, `--no-keybinding`,
 `--no-restart`, `--yes`), installing a specific version, installing with
 `omarchy plugin add` or from a zip, checking the install, updating,
 uninstalling and troubleshooting.
@@ -134,7 +133,7 @@ More in the [Install Guide](docs/INSTALL.md#8-troubleshooting).
 | `docs/INSTALL.md` | Install Guide |
 | `docs/ARCHITECTURE.md` | Architecture: components, Omarchy integration, data, flows, design decisions |
 | `docs/DEVELOPMENT.md` | Development guide: checks, testing, releasing |
-| `docs/screenshot.png` | Screenshot |
+| `preview.png` | Screenshot (also the Omarchy plugin marketplace preview) |
 
 ## Author and license
 

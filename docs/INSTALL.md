@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Applies to** | Omarchy App Picker 1.0.1 |
+| **Applies to** | Omarchy App Picker 1.0.2 |
 | **Developed by** | Patrick Mulcahy · dev@mulcahy.io |
 | **License** | MIT |
 
@@ -18,24 +18,10 @@ on an Omarchy system. For what the picker does, see the
 | Omarchy 4.0 or later | `omarchy version` |
 | You are logged in to the Omarchy desktop (the shell must be running) | `omarchy-shell shell ping` prints `ok` |
 | `git` and `jq` (included with Omarchy) | `git --version`, `jq --version` |
-| Access to the repository on GitHub (it is private) | `gh auth status`, or an SSH key on a GitHub account with access |
 
 Tested on Omarchy 4.0.4 with Hyprland 0.56.2 and Quickshell 0.3.1.
 
 Nothing needs `sudo`. Everything is installed in your home directory.
-
-### Access to the repository
-
-The repository is private. On a new machine, sign in to GitHub first with an
-account that has access, using either:
-
-```bash
-gh auth login            # choose GitHub.com, HTTPS, and log in with a browser
-```
-
-or an SSH key added to that GitHub account, and clone with
-`git@github.com:mulcahyio/omarchy-app-picker.git` instead of the HTTPS
-URL below.
 
 ## 2. Install (recommended)
 
@@ -51,13 +37,13 @@ Expected output:
   Omarchy App Picker - install
 
   [ OK ] Omarchy 4.0.4-1 with the shell running
-  [ OK ] Plugin mulcahyio.app-picker 1.0.1 is valid
+  [ OK ] Plugin mulcahyio.app-picker 1.0.2 is valid
   [ OK ] Installed files to /home/<you>/.config/omarchy/plugins/mulcahyio.app-picker
   [ OK ] Enabled mulcahyio.app-picker (bar icon: --section left --after omarchy.menu)
   [ OK ] Keybinding SUPER + A added in /home/<you>/.config/hypr/bindings.lua
   [ OK ] Restarted the Omarchy shell
 
-  App Picker 1.0.1 is installed.
+  App Picker 1.0.2 is installed.
 ```
 
 The top bar disappears for a second while the shell restarts. After that you
@@ -91,7 +77,7 @@ Omarchy's own files in `/usr/share/omarchy` are not touched.
 ### 3.1 A specific version
 
 ```bash
-git clone --branch v1.0.1 https://github.com/mulcahyio/omarchy-app-picker.git
+git clone --branch v1.0.2 https://github.com/mulcahyio/omarchy-app-picker.git
 cd omarchy-app-picker
 ./install.sh
 ```
@@ -136,7 +122,7 @@ to update, download the new zip and run its `install.sh --yes`.
 | Keybinding live | `hyprctl binds \| grep -B5 "description: App Picker"` | `modmask: 64` (Super) and `key: A`, or the key you chose |
 | No config errors | `hyprctl configerrors` | Empty output |
 | Opens | `omarchy-shell shell toggle mulcahyio.app-picker` | The picker opens; run it again to close |
-| Version | `jq -r .version ~/.config/omarchy/plugins/mulcahyio.app-picker/manifest.json` | `1.0.1` |
+| Version | `jq -r .version ~/.config/omarchy/plugins/mulcahyio.app-picker/manifest.json` | `1.0.2` |
 
 Then try it: press **Super + A** (or click the grid icon next to the Omarchy
 icon), type a few letters, press Enter.
@@ -200,7 +186,7 @@ installed.
 | Shortcut does nothing | Bind not loaded or config error | `hyprctl reload`, then `hyprctl configerrors`; check `hyprctl binds` |
 | Bar icon missing | Plugin not enabled | `omarchy plugin enable mulcahyio.app-picker --section left --after omarchy.menu` |
 | A change to the plugin files doesn't show | Shell keeps the loaded plugin | `omarchy restart shell` |
-| `git clone` asks for a password / "Repository not found" | No access to the private repository | Log in with `gh auth login` using an account that has access |
+| `git clone` asks for a password / "Repository not found" | Typo in the URL | Use `https://github.com/mulcahyio/omarchy-app-picker.git` |
 
 Still stuck? Contact dev@mulcahy.io with the output of `./install.sh`,
 `omarchy version` and `hyprctl version`.

@@ -4,13 +4,27 @@ All notable changes to Omarchy App Picker are recorded here. Versions follow
 [Semantic Versioning](https://semver.org). The version in `manifest.json`
 matches the git tag (`vX.Y.Z`).
 
-## Unreleased
+## 1.0.2 (2026-10-11)
+
+Preparation for listing on the Omarchy plugin marketplace
+(plugins.omarchy.org). The picker's behaviour is unchanged.
+
+### Changed
+- The repository at `github.com/mulcahyio/omarchy-app-picker` is now public.
+  The instructions for accessing a private repository are removed.
+- The screenshot moved from `docs/screenshot.png` to `preview.png` in the
+  repository root, where the marketplace looks for a preview image.
 
 ### Documentation
 - Test record: mouse drag-and-drop (add to Favorites, reorder, remove) and all
   other functions tested by hand on 1.0.1 by Patrick Mulcahy, 2026-10-11, with
   no issues found. This closes the 1.0.0 known limitation about untested
   drag-and-drop.
+
+### Compatibility
+- Omarchy 4.0.4, Hyprland 0.56.2, Quickshell 0.3.1.
+- Upgrading from 1.0.1: `omarchy plugin update mulcahyio.app-picker`, then
+  `omarchy restart shell`. Favorites and settings are kept.
 
 ## 1.0.1 (2026-10-11)
 

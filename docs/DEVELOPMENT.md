@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Version** | 1.0.1 |
+| **Version** | 1.0.2 |
 | **Plugin id** | `mulcahyio.app-picker` |
 | **Developed by** | Patrick Mulcahy · dev@mulcahy.io |
 | **License** | MIT (see `LICENSE`) |
@@ -59,30 +59,30 @@ Test favorites against a throwaway state file, then delete it:
 
 On Omarchy 4.0.4, Hyprland 0.56.2, one 1920 × 1080 monitor:
 
-| Area | 1.0.0 | 1.0.1 |
-|---|---|---|
-| Manifest validation, QML lint | Pass | Pass |
-| Opens from the shell command and bar icon; full screen covers the bar | Pass | Pass |
-| All 43 apps from the Apps menu, with icons and names | Pass | Pass |
-| A → Z, Z → A, search | Pass | — (no code change) |
-| Window mode and back | Pass | — |
-| Ctrl+F add/remove favorite, Favorites view, rank badges | Pass | — |
-| Ctrl+← / Ctrl+→ rank changes, selection follows the moved app | Pass | — |
-| Settings saved and restored across shell restarts | Pass | — |
-| `install.sh` fresh install: bar icon after the Omarchy icon, Super + A, shell restart | Pass | Pass |
-| `install.sh` re-run: replaces the copy, still one keybinding block, no extra blank lines | Pass | Pass |
-| `install.sh --key` on a taken key: warns, leaves the existing binding | Pass | Pass |
-| `install.sh` without a terminal and without `--yes`: refuses to replace | Pass | Pass |
-| `install.sh` from a release-tag (detached) checkout: installed on `main`, tracking GitHub | — | Pass |
-| `install.sh` from a zip (no `.git`): files copied | — | Pass |
-| `omarchy plugin add … --enable --yes`, then `install.sh` from the plugin folder for the keybinding | — | Pass |
-| `git pull` and `omarchy plugin update` on the installed copy | Pass | Pass |
-| `uninstall.sh`: disables, removes bar icon, keybinding block and folder | Pass | Pass |
-| ShellCheck (warnings) on both scripts | Pass | Pass |
-| `bindings.conf` (older Hyprland config) | Not tested | Not tested |
-| Mouse: drag an app into Favorites, reorder by dragging, remove by dragging out / ✕ | Not tested | Pass (by hand, Patrick Mulcahy, 2026-10-11) |
-| All other functions, by hand | — | Pass (Patrick Mulcahy, 2026-10-11; no issues found) |
-| Multiple monitors, HiDPI scaling | Not tested | Not tested |
+| Area | 1.0.0 | 1.0.1 | 1.0.2 |
+|---|---|---|---|
+| Manifest validation, QML lint | Pass | Pass | Pass |
+| Opens from the shell command and bar icon; full screen covers the bar | Pass | Pass | Pass |
+| All 43 apps from the Apps menu, with icons and names | Pass | Pass | Pass |
+| A → Z, Z → A, search | Pass | — (no code change) | — |
+| Window mode and back | Pass | — | — |
+| Ctrl+F add/remove favorite, Favorites view, rank badges | Pass | — | — |
+| Ctrl+← / Ctrl+→ rank changes, selection follows the moved app | Pass | — | — |
+| Settings saved and restored across shell restarts | Pass | — | Pass (favorites kept across uninstall and reinstall) |
+| `install.sh` fresh install: bar icon after the Omarchy icon, Super + A, shell restart | Pass | Pass | Pass |
+| `install.sh` re-run: replaces the copy, still one keybinding block, no extra blank lines | Pass | Pass | — |
+| `install.sh --key` on a taken key: warns, leaves the existing binding | Pass | Pass | — |
+| `install.sh` without a terminal and without `--yes`: refuses to replace | Pass | Pass | — |
+| `install.sh` from a release-tag (detached) checkout: installed on `main`, tracking GitHub | — | Pass | — |
+| `install.sh` from a zip (no `.git`): files copied | — | Pass | — |
+| `omarchy plugin add … --enable --yes`, then `install.sh` from the plugin folder for the keybinding | — | Pass | — |
+| `git pull` and `omarchy plugin update` on the installed copy | Pass | Pass | — |
+| `uninstall.sh`: disables, removes bar icon, keybinding block and folder | Pass | Pass | Pass |
+| ShellCheck (warnings) on both scripts | Pass | Pass | Pass |
+| `bindings.conf` (older Hyprland config) | Not tested | Not tested | Not tested |
+| Mouse: drag an app into Favorites, reorder by dragging, remove by dragging out / ✕ | Not tested | Pass (by hand, Patrick Mulcahy, 2026-10-11) | — |
+| All other functions, by hand | — | Pass (Patrick Mulcahy, 2026-10-11; no issues found) | — |
+| Multiple monitors, HiDPI scaling | Not tested | Not tested | Not tested |
 
 ## Releasing
 

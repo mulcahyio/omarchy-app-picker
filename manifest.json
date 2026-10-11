@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "mulcahyio.app-picker",
   "name": "App Picker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Patrick Mulcahy <dev@mulcahy.io>",
   "description": "Full-screen app grid with search, A-Z / Z-A sorting and ranked favorites",
   "kinds": [
