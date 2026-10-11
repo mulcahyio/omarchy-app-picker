@@ -115,6 +115,12 @@ one later, run `install.sh` from the installed folder:
 ~/.config/omarchy/plugins/mulcahyio.app-picker/install.sh
 ```
 
+To move the bar icon next to the Omarchy icon afterwards:
+
+```bash
+omarchy plugin enable mulcahyio.app-picker --section left --after omarchy.menu
+```
+
 ### 3.3 From a downloaded zip (no git)
 
 Download the source zip from the release page, unpack it, and run
