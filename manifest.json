@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "mulcahyio.app-picker",
+  "name": "App Picker",
+  "version": "1.0.0",
+  "author": "Patrick Mulcahy",
+  "description": "Full-screen app grid with search, A-Z / Z-A sorting and ranked favorites",
+  "kinds": [
+    "menu",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "menu": "AppPicker.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "App Picker",
+    "description": "Opens the full-screen App Picker",
+    "category": "Compositor",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}
