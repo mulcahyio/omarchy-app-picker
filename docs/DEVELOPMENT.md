@@ -139,7 +139,13 @@ On Omarchy 4.0.4, one 1920 × 1080 monitor:
 | Ctrl+F add/remove favorite, Favorites view, rank badges | Pass |
 | Ctrl+← / Ctrl+→ rank changes, selection follows the moved app | Pass |
 | Settings saved and restored | Pass |
-| `install.sh` / `uninstall.sh` on this machine | See the release notes in CHANGELOG.md |
+| `install.sh`: fresh install, bar placement after the Omarchy icon, Super + A binding, shell restart | Pass |
+| `install.sh` re-run: replaces the copy, still one keybinding block | Pass |
+| `install.sh --key` on a taken key: warns and leaves the existing binding | Pass |
+| `install.sh` without a terminal and without `--yes`: refuses to replace | Pass |
+| `uninstall.sh`: disables, removes bar icon, keybinding block and folder | Pass |
+| ShellCheck (warnings) on both scripts | Pass |
+| `bindings.conf` (older Hyprland config) path | Not tested |
 | Mouse drag-and-drop | Not tested (no way to simulate mouse drags) |
 | Multiple monitors, HiDPI scaling | Not tested |
 
