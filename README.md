@@ -57,7 +57,7 @@ tells you. Options:
 
 | Option | What it does |
 |---|---|
-| `--key "SUPER + SHIFT + A"` | Use a different keybinding |
+| `--key "SUPER + ALT + Y"` | Use a different keybinding (check which keys are free with `omarchy menu keybindings --print`) |
 | `--force-key` | Take the key even if it is bound (the old binding is unbound) |
 | `--no-keybinding` | No keybinding; use the bar icon |
 | `--no-restart` | Don't restart the shell now |
@@ -133,7 +133,7 @@ kept; add `--purge` to remove them too.
 
 | Problem | Fix |
 |---|---|
-| Keybinding does nothing | `hyprctl binds \| grep -i "app picker"`; if missing, re-run `./install.sh` (or pick another key with `--key`). Run `hyprctl configerrors`. |
+| Keybinding does nothing | `hyprctl binds \| grep -i "app picker"`; if missing, re-run `./install.sh` (or pick a free key with `--key "MODS + KEY"`). Run `hyprctl configerrors`. |
 | Bar icon missing | `omarchy plugin list` should show `mulcahyio.app-picker enabled`. If not: `omarchy plugin enable mulcahyio.app-picker --section left --after omarchy.menu`. |
 | Changes to the plugin files don't show | Run `omarchy restart shell`. |
 | Some app is missing | The picker shows what the Omarchy Apps menu shows. Apps hidden there (NoDisplay, OnlyShowIn, Omarchy's hide list) are hidden here too. |

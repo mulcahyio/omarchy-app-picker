@@ -55,7 +55,7 @@ fi
 
 # Remove the keybinding block.
 remove_block() {  # file begin end
-  [[ -f $1 ]] && grep -qxF "$2" "$1" || return 1
+  [[ -f $1 ]] && grep -qxF -e "$2" -- "$1" || return 1
   cp -- "$1" "$1.bak.app-picker.$(date +%Y%m%d-%H%M%S)"
   awk -v b="$2" -v e="$3" '$0==b{skip=1; next} $0==e{skip=0; next} !skip' "$1" > "$1.tmp.$$" && mv -- "$1.tmp.$$" "$1"
 }

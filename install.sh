@@ -176,7 +176,7 @@ if (( ADD_KEY )); then
       unbind=1
     else
       warn "\"$KEY\" is already bound to \"$holder\". Skipping the keybinding."
-      warn "Pick another key with --key \"SUPER + SHIFT + A\", or take this one with --force-key."
+      warn "Pick a free key with --key \"MODS + KEY\" (see: omarchy menu keybindings --print), or take this one with --force-key."
       ADD_KEY=0
     fi
   fi
@@ -187,7 +187,7 @@ if (( ADD_KEY )); then
       cp -- "$lua" "$lua.bak.app-picker.$stamp"
       remove_block "$lua" "$MARK_BEGIN" "$MARK_END"
       {
-        echo
+        [[ -n $(tail -n1 "$lua") ]] && echo
         echo "$MARK_BEGIN"
         (( unbind )) && echo "hl.unbind(\"$KEY\")"
         echo "o.bind(\"$KEY\", \"App Picker\", \"$TOGGLE_CMD\")"
@@ -199,7 +199,7 @@ if (( ADD_KEY )); then
       remove_block "$conf" "$CONF_MARK_BEGIN" "$CONF_MARK_END"
       mods=$(echo "${KEY%+*}" | tr '+' ' ' | tr -s ' ' | sed 's/^ //;s/ $//')
       {
-        echo
+        [[ -n $(tail -n1 "$conf") ]] && echo
         echo "$CONF_MARK_BEGIN"
         (( unbind )) && echo "unbind = $mods, $key"
         echo "bindd = $mods, $key, App Picker, exec, $TOGGLE_CMD"
