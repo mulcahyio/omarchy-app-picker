@@ -103,8 +103,12 @@ else
   stage="$PLUGINS_DIR/.app-picker.tmp.$$"
   trap 'rm -rf -- "$stage"' EXIT
   if git -C "$SCRIPT_DIR" rev-parse --git-dir >/dev/null 2>&1; then
-    git clone --quiet -- "$SCRIPT_DIR" "$stage"
-    git -C "$stage" checkout --quiet "$(git -C "$SCRIPT_DIR" rev-parse HEAD)"
+    # Stay on a branch (not a detached commit) so `git pull` and
+    # `omarchy plugin update` can fast-forward the install later.
+    branch=$(git -C "$SCRIPT_DIR" symbolic-ref --short -q HEAD || echo main)
+    git clone --quiet --branch "$branch" -- "$SCRIPT_DIR" "$stage" 2>/dev/null \
+      || git clone --quiet -- "$SCRIPT_DIR" "$stage"
+    git -C "$stage" reset --quiet --hard "$(git -C "$SCRIPT_DIR" rev-parse HEAD)"
     git -C "$stage" remote set-url origin "$origin_url"
   else
     # Unpacked from a zip/tarball: copy the files as they are.
